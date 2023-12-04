@@ -12,6 +12,17 @@
 
 // CODE ICI
 
+
+const multipliedSums = (a, b) => {
+    const results = a * b;
+    return results;
+};
+
+const a = 2
+const b = 3
+const finalResult = multipliedSums(a, b);
+console.log(finalResult);
+
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 2
 
@@ -22,6 +33,11 @@
 // console.log(monTableau[0]) // 1
 
 // CODE ICI
+const myArray = [1, 2, 3];
+const returnArray = (myArray) => {
+    return (myArray[0]);
+}
+console.log(returnArray(myArray));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 3
@@ -34,7 +50,9 @@
 // console.log(monTableau) // [1, 2]
 
 // CODE ICI
-
+const tab = [1, 2, 3];
+const lastElementDelete = tab.pop()
+console.log(tab);
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 4
 
@@ -47,7 +65,13 @@
 // }
 
 // CODE ICI
+const monTableau = [1, 2, 3];
+let sum = 0;
 
+for (let i = 0; i < monTableau.length; i++) {
+    sum += (monTableau[i]);
+}
+console.log(sum);
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 5
@@ -308,9 +332,9 @@
 
 // EXERCICE 21 
 
- //Écrivez une fonction `anagram` qui prend deux chaînes et renvoie un booléen indiquant si les chaînes sont des anagrammes l'une de l'autre. Deux chaînes sont des anagrammes l'une de l'autre si elles contiennent les caractères, quel que soit l'ordre des caractères. Par exemple, "listen" et "silent" sont des anagrammes l'une de l'autre
+//Écrivez une fonction `anagram` qui prend deux chaînes et renvoie un booléen indiquant si les chaînes sont des anagrammes l'une de l'autre. Deux chaînes sont des anagrammes l'une de l'autre si elles contiennent les caractères, quel que soit l'ordre des caractères. Par exemple, "listen" et "silent" sont des anagrammes l'une de l'autre
 
- // Indice : Oubliez pas de transformer les string en tableau pour pouvoir les trier et les comparer. Utilisez la méthode split() pour transformer une string en tableau et la méthode sort() pour trier un tableau. Puis comparez les deux tableaux avec la méthode join() qui permet de transformer un tableau en string.
+// Indice : Oubliez pas de transformer les string en tableau pour pouvoir les trier et les comparer. Utilisez la méthode split() pour transformer une string en tableau et la méthode sort() pour trier un tableau. Puis comparez les deux tableaux avec la méthode join() qui permet de transformer un tableau en string.
 
 
 // CODE ICI
@@ -395,7 +419,7 @@
 
 // EXERCICE 23
 
- //Écrivez une fonction qui prend un tableau de 10 entiers (entre 0 et 9) et renvoie une chaîne de caractères sous la forme d'un numéro de téléphone.
+//Écrivez une fonction qui prend un tableau de 10 entiers (entre 0 et 9) et renvoie une chaîne de caractères sous la forme d'un numéro de téléphone.
 // Exemple :
 // createPhoneNumber([1,2,3,4,5,6,7,8,9,0]) // "(123) 456-7890"
 // Indice : Utilisez la méthode slice() pour découper le tableau en plusieurs morceaux. Puis utilisez la méthode join() pour transformer un tableau en string.
@@ -468,7 +492,7 @@
 
 // EXERCICE 25
 
- //Écrivez une fonction qui prend un tableau de string et renvoie un tableau de string triées par ordre alphabétique.
+//Écrivez une fonction qui prend un tableau de string et renvoie un tableau de string triées par ordre alphabétique.
 // Exemple :
 // sortString(["Banana", "Orange", "Apple", "Mango"]) // ["Apple", "Banana", "Mango", "Orange"]
 // sortString(["lait", "beurre", "fromage", "yaourt"]) // ["beurre", "fromage", "lait", "yaourt"]
