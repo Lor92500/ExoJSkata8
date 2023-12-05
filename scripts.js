@@ -86,7 +86,12 @@ console.log(sum);
 //Maintenant que la string est inversée il faut la remettre en string avec la méthode join().
 
 // CODE ICI
+const text = "Hello";
+const monTableau1 = text.split("");
+console.log(monTableau1);
 
+const monTableauInverse = monTableau1.slice().reverse();
+console.log(monTableauInverse)
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 6
@@ -97,6 +102,8 @@ console.log(sum);
 // console.log(Math.max(...monTableau)) // 3
 
 // CODE ICI
+const monTableau2 = [1, 2, 3];
+console.log(Math.max(...monTableau2));
 
 //----------------------------------------------------------------------------------------------//
 
@@ -108,7 +115,8 @@ console.log(sum);
 // console.log(Math.min(...monTableau)) // 1
 
 // CODE ICI
-
+const monTableau3 = [1, 2, 3];
+console.log(Math.min(...monTableau3));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 8
@@ -124,7 +132,12 @@ console.log(sum);
 // })
 
 // CODE ICI
+const text1 = "Hello"
+const monTableau4 = text1.split("");
+console.log(monTableau4);
 
+const monTableauFiltre = monTableau4.filter((voyelle) => { return voyelle !== "e" && voyelle !== "o" })
+console.log(monTableauFiltre);
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 9
@@ -136,7 +149,8 @@ console.log(sum);
 // console.log(monTableau.sort()) // [1, 2, 3]
 
 // CODE ICI
-
+const monTableau5 = [1, 3, 2];
+console.log(monTableau5.sort((a, b) => a - b));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 10
@@ -153,7 +167,13 @@ console.log(sum);
 // console.log(monTableau) // ["Hello", "elloH", "lloHe", "loHel", "oHell"]
 
 // CODE ICI
-
+const poupée = "Hello"
+const monTableau6 = []
+for (let i = 0; i < poupée.length; i++) {
+    const poupéeRotate = poupée.substring(i) + poupée.substring(0, i)
+    monTableau6.push(poupéeRotate)
+}
+console.log(monTableau6);
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 11
@@ -167,7 +187,11 @@ console.log(sum);
 // })
 
 // CODE ICI
-
+const monTableau7 = [1, 2, 3];
+const monTableauAddition = monTableau7.map((élément) => {
+    return élément + 1
+})
+console.log(monTableauAddition)
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 12
