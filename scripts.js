@@ -205,7 +205,11 @@ console.log(monTableauAddition)
 // })
 
 // CODE ICI
-
+const monTableau8 = ["Hello", "World"]
+const monTableauLongueur = monTableau8.map((tableau) => {
+    return tableau.length
+})
+console.log(monTableauLongueur);
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 13
@@ -220,8 +224,12 @@ console.log(monTableauAddition)
 // })
 
 // CODE ICI
-
-//----------------------------------------------------------------------------------------------//
+const mesMots = ["Hello", "Wordl"];
+const premieresLettres = mesMots.map((mot) => {
+    return mot.charAt(0)
+})
+console.log(premieresLettres)
+//--------------------------------------------------------------------------------------------//
 
 // EXERCICE 14
 
@@ -231,7 +239,11 @@ console.log(monTableauAddition)
 
 
 // CODE ICI
-
+const myWords = ["Hello", "Wordl"];
+const dernieresLettres = myWords.map((word) => {
+    return word.charAt(4)
+})
+console.log(dernieresLettres)
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 15
@@ -241,6 +253,14 @@ console.log(monTableauAddition)
 // Pour cette exercice on va utiliser la méthode filter() qui permet de filtrer un tableau, hésitez pas à regarder l'exercice 8 pour voir comment ça fonctionne. Sauf qu'ici on va filtrer en fonction de la longueur de la string. Incice : la méthode length() permet de récupérer la longueur d'une string.
 
 // CODE ICI
+const piupiu = ["Hello", "Wordl", "Test", "Salut", "Yo"];
+
+const newPiupiu = piupiu.filter((message) => {
+    return message.length <= 5
+})
+console.log(newPiupiu)
+
+// A revoir!
 
 //----------------------------------------------------------------------------------------------//
 
