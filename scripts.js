@@ -255,12 +255,10 @@ console.log(dernieresLettres)
 // CODE ICI
 const piupiu = ["Hello", "Wordl", "Test", "Salut", "Yo"];
 
-const newPiupiu = piupiu.filter((message) => {
-    return message.length <= 5
-})
+const newPiupiu = piupiu.filter((message) => { return message.length >= 5 }
+)
 console.log(newPiupiu)
 
-// A revoir!
 
 //----------------------------------------------------------------------------------------------//
 
@@ -275,7 +273,11 @@ console.log(newPiupiu)
 // }, 0)
 
 // CODE ICI
-
+const myFirtsArray = [1, 2, 3];
+const somme = myFirtsArray.reduce((total, valeur) => {
+    return total + valeur
+});
+console.log(somme)
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 17
@@ -289,7 +291,10 @@ console.log(newPiupiu)
 // console.log(monTableauConcat) // ["Hello", "World", "Test", "Salut"]
 
 // CODE ICI
-
+const doggy1 = ["Hello", "World"];
+const doggy2 = ["Test", "Salut"];
+const doggyConcat = doggy1.concat(doggy2)
+console.log(doggyConcat)
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 18
@@ -299,7 +304,16 @@ console.log(newPiupiu)
 // Pour cette exercice on va utiliser la méthode filter() qui permet de filtrer un tableau, hésitez pas à regarder l'exercice 8 pour voir comment ça fonctionne. Sauf qu'ici on va filtrer en fonction de la présence de la lettre "e". Indice : la méthode includes() permet de savoir si une string contient une lettre ou un mot.
 
 // CODE ICI
+function filtreStringWhitE(tab2) {
+    const resultFiltre = tab2.filter(function (letter) {
+        return letter.includes("e");
+    });
+    return resultFiltre;
+}
 
+const animals = ["Poulet", "Chat", "Chien", "Cheval"];
+const result = filtreStringWhitE(animals)
+console.log(result);
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 19
@@ -309,6 +323,19 @@ console.log(newPiupiu)
 // Indice : il y a plusieurs façon de faire, soit avec un for, soit avec la méthode filter() une fois ça fait utilise la méthode sort() qui permet de trier un tableau.
 
 // CODE ICI
+function filtreEvenNumbers(tab3) {
+    const evenNumbers = tab3.filter(function (number) {
+        return number % 2 === 0;
+    });
+    evenNumbers.sort(function (a, b) {
+        return a - b;
+    })
+
+    return evenNumbers;
+}
+const ocean = [2, 9, 6, 5, 6];
+const resultats = filtreEvenNumbers(ocean);
+console.log(resultats);
 
 //----------------------------------------------------------------------------------------------//
 
