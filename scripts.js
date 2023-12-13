@@ -473,17 +473,11 @@ console.log(resultatNonAnagram);
 // CODE ICI
 const removeDoubleLetters = (expression) => {
     let allExpression = expression.split("");
-    let allExpressionFiltre = allExpression.filter((caractere, index) => {
-        return index === allExpression.length - 1 || caractere !== allExpression[i + 1];
-    });
-
-    const unduplicatedExpression = allExpressionFiltre.join("");
-    return unduplicatedExpression;
 
 }
 
 console.log(removeDoubleLetters("google"));
-
+//  A revoir
 
 
 
