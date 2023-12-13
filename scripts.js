@@ -363,13 +363,17 @@ console.log(resultats);
 // })
 // Indice 6 : Pour récupérer le premier élément d'un tableau tu peux utiliser la notation crochet : monTableau[0]
 
-
-
-
-
 // CODE ICI
+function findShort(sentence) {
+    const allWords = sentence.split(" ");
+    const length = allWords.map(allWords => allWords.length);
+    length.sort((a, b) => a - b);
+    const shorterLength = length[0];
+    return shorterLength;
+}
 
-
+console.log(findShort("Prachett is the best author in the wordl"));
+console.log(findShort("The quick brown fox jumps over the lazy dog"));
 
 
 
@@ -409,7 +413,23 @@ console.log(resultats);
 
 
 // CODE ICI
+function anagram(chaine1, chaine2) {
+    const tabChaine1 = chaine1.split("");
+    const tabChaine2 = chaine2.split("");
 
+    tabChaine1.sort();
+    tabChaine2.sort();
+
+    const chaine1Triee = tabChaine1.join("");
+    const chaine2Triee = tabChaine2.join("");
+
+    return chaine1Triee === chaine2Triee;
+}
+const resultat = anagram("listen", "silent");
+console.log(resultat);
+
+const resultatNonAnagram = anagram("home", "cat");
+console.log(resultatNonAnagram);
 
 
 
@@ -451,7 +471,18 @@ console.log(resultats);
 
 
 // CODE ICI
+const removeDoubleLetters = (expression) => {
+    let allExpression = expression.split("");
+    let allExpressionFiltre = allExpression.filter((caractere, index) => {
+        return index === allExpression.length - 1 || caractere !== allExpression[i + 1];
+    });
 
+    const unduplicatedExpression = allExpressionFiltre.join("");
+    return unduplicatedExpression;
+
+}
+
+console.log(removeDoubleLetters("google"));
 
 
 
