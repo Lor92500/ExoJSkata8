@@ -375,12 +375,6 @@ function findShort(sentence) {
 console.log(findShort("Prachett is the best author in the wordl"));
 console.log(findShort("The quick brown fox jumps over the lazy dog"));
 
-
-
-
-
-
-
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
 //--------------------------------------SOLUTIONS-----------------------------------------------//
@@ -431,11 +425,6 @@ console.log(resultat);
 const resultatNonAnagram = anagram("home", "cat");
 console.log(resultatNonAnagram);
 
-
-
-
-
-
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
 //--------------------------------------SOLUTIONS-----------------------------------------------//
@@ -474,14 +463,20 @@ console.log(resultatNonAnagram);
 const removeDoubleLetters = (expression) => {
     let allExpression = expression.split("");
 
+    for (let i = 0; i < allExpression.length - 1;) {
+        if (allExpression[i] === allExpression[i + 1]) {
+            allExpression.splice(i + 1, 1);
+        } else {
+            i++;
+        }
+    }
+
+    let resultString = allExpression.join('');
+    return resultString;
 }
 
 console.log(removeDoubleLetters("google"));
-//  A revoir
-
-
-
-
+console.log(removeDoubleLetters("Hello Wordl"))
 
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
@@ -521,7 +516,15 @@ console.log(removeDoubleLetters("google"));
 // Indice : Utilisez la méthode slice() pour découper le tableau en plusieurs morceaux. Puis utilisez la méthode join() pour transformer un tableau en string.
 
 // CODE ICI
+const createPhoneNumber = (numbers) => {
+    let part1 = numbers.slice(0, 3).join('');
+    let part2 = numbers.slice(3, 6).join('');
+    let part3 = numbers.slice(6, 10).join('');
 
+    return `(${part1}) ${part2}-${part3}`;
+}
+
+console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
 
 
 
@@ -559,8 +562,21 @@ console.log(removeDoubleLetters("google"));
 
 // CODE ICI
 
+function findMissingLetter(letters) {
+    for (let i = 0; i < letters.length; i++) {
+        let currentCharCode = letters[i].charCodeAt(0);
+        let startCharCode = letters[0].charCodeAt(0);
 
+        if (currentCharCode !== startCharCode + i) {
+            return String.fromCharCode(startCharCode + i);
+        }
+    }
 
+    return undefined;
+}
+
+console.log(findMissingLetter(["a", "b", "c", "e"]));
+console.log(findMissingLetter(["O", "Q", "R", "S"]));
 
 
 
@@ -597,7 +613,24 @@ console.log(removeDoubleLetters("google"));
 // Indice 2 : Pour trier un tableau de string par ordre alphabétique en se basant sur l'ordre alphabétique des lettres, vous devez utiliser une fonction de comparaison en paramètre de la méthode sort(). Cette fonction de comparaison prend deux paramètres (a et b) et renvoie un nombre négatif si a est plus petit que b, un nombre positif si a est plus grand que b et 0 si a est égal à b.
 
 // CODE ICI
+function sortString(array) {
+    return array.sort((a, b) => {
+        a = a.toLowerCase();
+        b = b.toLowerCase();
 
+        if (a < b) {
+            return -1;
+        }
+
+        if (a > b) {
+            return 1;
+        }
+        return 0;
+    });
+}
+
+console.log(sortString(["Banana", "Orange", "Apple", "Mango"]));
+console.log(sortString(["lait", "beurre", "fromage", "yaourt"]));
 
 
 
