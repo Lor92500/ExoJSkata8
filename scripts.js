@@ -796,22 +796,22 @@ console.log(sortAnimals(animals));
 // Indice : Tu dois utiliser deux boucles imbriquées pour créer les sous-tableaux. La première boucle doit parcourir les colonnes et la seconde boucle doit parcourir les sièges de chaque colonne. 
 
 // CODE ICI
+function theatreSieges() {
+    let seat = [];
 
+    for (let column = 1; column <= 26; column++) {
+        let columnSeat = [];
 
+        for (let seat =1; seat <= 100; seat++) {
+            columnSeat.push(`${column}-${seat}`);
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        seat.push(columnSeat);
+    }
+    return seat;
+}
+let listSeat = theatreSieges();
+console.log(listSeat);
 
 
 
@@ -852,20 +852,24 @@ Pour exemple, si ta fonction recevait le tableau ci-dessous en paramètre, tu de
 // CODE ICI
 
 
+const footballPoints = (resultats) => {
+    let score = 0;
+    for (let i = 0; i < resultats.length; i++) {
+        const match = resultats[i].split(':');
+        const butsPour = parseInt(match[0]);
+        const butsContre = parseInt(match[1]);
 
+        if (butsPour > butsContre) {
+            score += 3;
+        } else if (butsPour === butsContre) {
+            score += 1;
+        }
+       
+    }
+    return score;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(footballPoints(["1:0", "2:0", "3:0", "4:4", "2:2", "3:3", "1:4", "2:3", "2:4", "3:3"]));
 
 
 //-----------------------------------------------SOLUTIONS-----------------------------------------------//
@@ -902,7 +906,22 @@ sumArr( ["2", "5", "3"], ["2", "4", "9", "5", "5"] ) should return ["4", "9", "1
 //Indice : Tu dois utiliser une boucle for pour parcourir les tableaux et une condition if pour savoir si un élément est vide. Si un élément est vide tu dois le remplacer par 0. Et tu dois ajouter les éléments des deux tableaux à une variable tableau3 qui doit être initialisée à un tableau vide. Et tu dois retourner le tableau3 à la fin de la fonction.
 
 // CODE ICI
+const sumArr = (tab1, tab2) => {
+    let tab3 = [];
 
+    for (let i = 0; i < tab1.length; i++) {
+        if (tab1[i] === "") {
+            tab1[i] = 0;
+        }
+        if (tab2[i] === "") {
+            tab2[i] = 0;
+        }
+        tab3.push(parseInt(tab1[i]) + parseInt(tab2[i]));
+    }
+    return tab3;
+}
+
+console.log(sumArr(["1", "2", "3"], ["2", "4", "1"]));
 
 
 
