@@ -968,8 +968,22 @@ console.log(sumArr(["1", "2", "3"], ["2", "4", "1"]));
 
 // CODE ICI
 
-let tableauName = ["Aldric", "Dolgrin", "Ernst", "Gellius", "Gorstag", "Hagar", "Jozan", "Kef", "Leve", "Morn", "Perrin", "Reed", "Rulf", "Shandar", "Taman", "Urth"]
-let tableauClass = ["barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", "wizard"]
+function generatedCharacter() {
+    const names = ["Aldric", "Dolgrin", "Ernst", "Gellius", "Gorstag", "Hagar", "Jozan", "Kef", "Leve", "Morn", "Perrin", "Reed", "Rulf", "Shandar", "Taman", "Urth"];
+    const classes =  ["barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", "wizard"];
+
+    let mixpersons = [];
+    for (let i = 0; i < 5; i++) {
+        const name = names[Math.floor(Math.random() * names.length)];
+        const clas = classes[Math.floor(Math.random() * classes.length)];
+        mixpersons.push([name, clas]);
+    }
+    return mixpersons;
+}
+console.log(generatedCharacter());
+
+// let tableauName = ["Aldric", "Dolgrin", "Ernst", "Gellius", "Gorstag", "Hagar", "Jozan", "Kef", "Leve", "Morn", "Perrin", "Reed", "Rulf", "Shandar", "Taman", "Urth"]
+// let tableauClass = ["barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", "wizard"]
 
 
 
@@ -1034,8 +1048,19 @@ let tableauClass = ["barbarian", "bard", "cleric", "druid", "fighter", "monk", "
 
 
 // CODE ICI
+function findMissingLetter(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        let currentCode = arr[i].charCodeAt(0);
+        let nextCode = arr[i + 1].charCodeAt(0);
 
+        if (nextCode - currentCode > 1) {
+            return String.fromCharCode(currentCode + 1);
+        }
+    }
+    return undefined;
+}
 
+console.log(findMissingLetter(["a", "b", "c", "d", "f"])); 
 
 
 
